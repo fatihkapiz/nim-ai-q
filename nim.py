@@ -1,4 +1,3 @@
-import math
 import random
 import time
 
@@ -167,7 +166,7 @@ class NimAI():
                 max_action = action
 
         print(max_action)
-        if epsilon == False:
+        if epsilon is False:
             return max_action
         else:
             random_or_max = random.choices((0, 1), weights=(self.epsilon, 1-self.epsilon))
@@ -175,6 +174,7 @@ class NimAI():
                 return random.choice(list_of_actions)
             else:
                 return max_action
+
 
 def train(n):
     """
